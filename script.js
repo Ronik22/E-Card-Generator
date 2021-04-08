@@ -24,7 +24,7 @@ const wishes = [
 const random = Math.floor(Math.random() * wishes.length);
 
 if (utype === '1'){
-    if (utext == null){
+    if (utext == null || utext == ""){
                 text_ele.innerHTML = wishes[random]
     }
     
