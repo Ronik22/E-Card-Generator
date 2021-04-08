@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,100;1,200&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #d9dcd6;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.book {
+  height: 24rem;
+  width: 16rem;
+  font-size: 0.8rem;
+  -webkit-box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.25);
+          box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  color: #484e4a;
+}
+
+.page {
+  width: 100%;
+  height: 24rem;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+}
+
+.page__1 {
+  background-color: #ffffff;
+  color: black;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: all 1s 0.3s;
+  transition: all 1s 0.3s;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  z-index: 2;
+  padding: 16px;
+  border: 4px solid #fff;
+}
+
+.page__1::after {
+  content: "🍰";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+  color: #252525;
+  position: absolute;
+  padding-top: 1.5rem;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  padding: 16px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: all 0.3s 0.5s;
+  transition: all 0.3s 0.5s;
+}
+
+.page__2 {
+  background-color: #8100eb;
+  color: #d9dcd6;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  position: absolute;
+  text-align: center;
+  padding: 16px;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  border: 4px solid #fff;
+}
+
+.page:hover .page__1 {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-box-shadow: 1.5rem 2rem 3rem rgba(0, 0, 0, 0.25);
+          box-shadow: 1.5rem 2rem 3rem rgba(0, 0, 0, 0.25);
+}
+
+.page:hover .page__1::after {
+  opacity: 1;
+}
+
+.chead {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1px;
+}
+
+#uname {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 400;
+}
+/*# sourceMappingURL=style.css.map */
