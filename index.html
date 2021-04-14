@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <form id="myform">
                         <div class="form-group">
-                          <input required placeholder="Name of the person" type="name" class="form-control" id="cname">
+                          <input placeholder="Name of the person" type="name" class="form-control" id="cname">
                         </div>
                         <br>
                         <div class="form-group">
@@ -41,6 +41,8 @@
                         <br>
                         <button type="submit" class="btn btn-primary">Generate card</button>
                     </form>
+                    <br>
+                    <p>Send the link or the QR Code to the person</p>
                 </div>
                 <div class="card-footer text-muted">
                     <div class="input-group mb-3">
@@ -49,6 +51,7 @@
                           <button id="copybtn" class="btn btn-outline-secondary" type="button">Copy URL</button>
                         </div>
                     </div>
+                    <canvas id="qr"></canvas>
                 </div>
             </div>
         </div>
@@ -58,25 +61,7 @@
 			integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
 			crossorigin="anonymous"
 		></script>
-        <script>
-            document.getElementById("myform").addEventListener("submit", 
-                function(event){
-                    event.preventDefault();
-                    const cname = document.getElementById("cname").value
-                    const ctext = document.getElementById("ctext").value
-                    const ctype = document.getElementById("ctype").value
-                    const res = document.getElementById("resultlink")
-                    
-                    res.value = window.location.href + `template1.html?name=${cname}&card=${ctype}&text=${ctext}`
-                });
-            
-            document.getElementById("copybtn").addEventListener("click", 
-                function(event){
-                    const t = document.getElementById("resultlink")
-                    t.select()
-                    document.execCommand("copy");
-                    alert("URL copied");
-                });
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+        <script src="./js/creator.js"></script>
 	</body>
 </html>

@@ -2,13 +2,13 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 // console.log(queryString);
 
-const uname = urlParams.get('name')
+const uname = decodeURI(window.atob(urlParams.get('name'))); 
 name_ele = document.getElementById("uname")
 name_ele.innerHTML = uname
 
-const utext = urlParams.get('text')
+const utext = decodeURI(window.atob(urlParams.get('text')));
 text_ele = document.getElementById("utext")
-text_ele.innerHTML = utext
+
 
 const utype = urlParams.get('card')
 type_ele = document.getElementById("utype")
@@ -23,9 +23,13 @@ const wishes = [
 ]
 const random = Math.floor(Math.random() * wishes.length);
 
+
 if (utype === '1'){
     if (utext == null || utext == ""){
-                text_ele.innerHTML = wishes[random]
+        text_ele.innerHTML = wishes[random]
+    }
+    else{
+        text_ele.innerHTML = utext
     }
     
     cnt = `<img style="width:100%" src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png"  alt="Birthday image">`
