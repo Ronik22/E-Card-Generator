@@ -9,8 +9,8 @@ document.getElementById("myform").addEventListener("submit",
         const enc_cname = encodeURI(window.btoa(cname))
         const enc_ctext = encodeURI(window.btoa(ctext))
 
-        temp = window.location.origin + `/template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}`
-            // temp = window.location.href + `template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}`
+        // temp = window.location.origin + `/template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}`
+        temp = window.location.href + `template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}`
         res.value = temp
         
 
