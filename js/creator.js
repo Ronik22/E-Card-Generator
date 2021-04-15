@@ -45,8 +45,8 @@ function selectCard(no){
     const enc_cname = encodeURI(window.btoa(cname))
     const enc_ctext = encodeURI(window.btoa(ctext))
 
-    temp = window.location.origin + `/template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for local
-    // temp = window.location.href + `template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for github
+    // temp = window.location.origin + `/template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for local
+    temp = window.location.href + `template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for github
     res.value = temp
     
 
