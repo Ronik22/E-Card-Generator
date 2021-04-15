@@ -14,30 +14,52 @@ type_ele = document.getElementById("utype")
 const utempl = urlParams.get('templ')
 
 
-const wishes = [
-    'I hope your day is filled with lots of love and laughter! May all of your birthday wishes come true.',
-    'Wishing you all the great things in life, hope this day will bring you an extra share of all that makes you happiest.',
-    'They say you lose your memory as you grow older. I say forget about the past and live life to the fullest today. Start with cake. Happy birthday.',
-    'On your special day, I wish you good luck. I hope this wonderful day will fill up your heart with joy and blessings.',
-    'To someone who touches each life you enter, spreading joy to everyone you meet: may the love and happiness you share with others return to you tenfold. I wish you many more happiest of birthdays!'
-]
-const random = Math.floor(Math.random() * wishes.length);
-
-
 if (utype === '1'){
+    document.getElementsByClassName("chead")[0].innerText = "Happy Birthday"
 
-    const bday = [
-        'https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png',
-        'https://image.freepik.com/free-vector/surprise-theme-happy-birthday-card-illustration_1344-199.jpg',
+    clist = [
+        './res/birthday/1.png',
+        './res/birthday/2.png',
+        './res/birthday/3.png',
+        './res/birthday/4.png',
+        './res/birthday/5.png',
+        './res/birthday/6.png',
+        './res/birthday/7.png',
+        './res/birthday/8.png',
+        './res/birthday/9.png',
     ]
 
-    if (utext == null || utext == ""){
-        text_ele.innerHTML = wishes[random]
-    }
-    else{
-        text_ele.innerHTML = utext
-    }
-    
-    cnt = `<img style="width:100%" src="${bday[utempl]}"  alt="Birthday image">`
+    text_ele.innerHTML = utext
+    cnt = `<img style="width:100%" src="${clist[utempl]}"  alt="Birthday image">`
 }
+
+if (utype === '6'){
+    document.getElementsByClassName("chead")[0].innerText = "Thank You"
+
+    clist = [
+        './res/thankyou/1.png',
+        './res/thankyou/2.png',
+        './res/thankyou/3.png',
+        './res/thankyou/4.png',
+        './res/thankyou/5.png',
+    ]
+
+    text_ele.innerHTML = utext
+    cnt = `<img style="width:100%" src="${clist[utempl]}"  alt="Thank You">`
+}
+
+if (utype === '7'){
+    document.getElementsByClassName("chead")[0].innerText = "Happy Anniversary"
+
+    clist = [
+        './res/anniversary/1.png',
+        './res/anniversary/2.png',
+        './res/anniversary/3.png',
+    ]
+
+    text_ele.innerHTML = utext
+    cnt = `<img style="width:100%" src="${clist[utempl]}"  alt="Anniversary">`
+}
+
+
 type_ele.innerHTML = cnt
