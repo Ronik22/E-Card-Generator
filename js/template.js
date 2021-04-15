@@ -1,6 +1,5 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-// console.log(queryString);
 
 const uname = decodeURI(window.atob(urlParams.get('name'))); 
 name_ele = document.getElementById("uname")
@@ -9,10 +8,11 @@ name_ele.innerHTML = uname
 const utext = decodeURI(window.atob(urlParams.get('text')));
 text_ele = document.getElementById("utext")
 
-
 const utype = urlParams.get('card')
 type_ele = document.getElementById("utype")
-// let cnt = None
+
+const utempl = urlParams.get('templ')
+
 
 const wishes = [
     'I hope your day is filled with lots of love and laughter! May all of your birthday wishes come true.',
@@ -25,6 +25,12 @@ const random = Math.floor(Math.random() * wishes.length);
 
 
 if (utype === '1'){
+
+    const bday = [
+        'https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png',
+        'https://image.freepik.com/free-vector/surprise-theme-happy-birthday-card-illustration_1344-199.jpg',
+    ]
+
     if (utext == null || utext == ""){
         text_ele.innerHTML = wishes[random]
     }
@@ -32,7 +38,6 @@ if (utype === '1'){
         text_ele.innerHTML = utext
     }
     
-    cnt = `<img style="width:100%" src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png"  alt="Birthday image">`
-    // cnt = `<img style="width:100%" src="https://image.freepik.com/free-vector/surprise-theme-happy-birthday-card-illustration_1344-199.jpg"  alt="Birthday image">`
+    cnt = `<img style="width:100%" src="${bday[utempl]}"  alt="Birthday image">`
 }
 type_ele.innerHTML = cnt

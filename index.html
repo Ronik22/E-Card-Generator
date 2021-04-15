@@ -23,26 +23,54 @@
             <div class="card m-auto col-md-8">
                 <div class="card-header h5 p-3">Enter details to generate your E-Card</div>
                 <div class="card-body">
-                    <form id="myform">
+                    <div id="myform">
+
+                        <!-- NAME -->
+
                         <div class="form-group">
                           <input placeholder="Name of the person" type="name" class="form-control" id="cname">
                         </div>
                         <br>
+
+                        <!-- TEXT -->
+
                         <div class="form-group">
                             <textarea rows="4" placeholder="What do you want to write on the card ?" type="text" class="form-control" id="ctext"></textarea>
                         </div>
                         <br>
+
+                        <!-- TYPE -->
+
                         <div class="form-group">
                             <label for="ctype">What card do you want to gift ?  </label>
                             <select id="ctype">
                                 <option value="1">Birthday</option>
+                                <option value="2">Dinner Party</option>
+                                <option value="3">Wedding</option>
+                                <option value="4">Christmas Party</option>
+                                <option value="5">Teacher Appreciation</option>
+                                <option value="6">Thank You</option>
+                                <option value="7">Anniversary</option>
+                                <option value="8">Congratulations</option>
+                                <option value="9">Get Well</option>
+                                <option value="10">Friendship</option>
+                                <option value="11">Love</option>
+                                <option value="12">Sorry</option>
                             </select>
+                            <br><br>
+                            <a onclick="genCards()" class="btn btn-primary">See templates</a>
                         </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Generate card</button>
-                    </form>
+                        <hr>
+
+                        <!-- CARDS -->
+
+                        <div class="form-group">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 gen-card"></div>
+                        </div>
+
+                    </div>
                     <br>
-                    <p>Send the link or the QR Code to the person</p>
+                    <p id="msg"></p>
                 </div>
                 <div class="card-footer text-muted">
                     <div class="input-group mb-3">
