@@ -7,4 +7,4 @@ Generate E-Cards (Birthday wish, Anniversary, Thank you cards, etc) and send the
 2) Provide the text you want to write on the card
 3) Click **See templates** and select a template
 4) On selecting, a link and a QR code will be generated
-5) Share the link or the code
+5) Share the link or the QR code
