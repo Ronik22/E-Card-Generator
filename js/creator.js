@@ -1,3 +1,11 @@
+const cardDATA = JSON.parse(cardPicPaths);
+
+const ctype = document.getElementById("ctype")
+const ctypeArray = Object.keys(cardDATA)
+for(let k=0; k<ctypeArray.length; k++) {
+    ctype.innerHTML += `<option value="${ctypeArray[k]}">${cardDATA[ctypeArray[k]]["title"]} card</option>`
+}
+
 document.getElementById("copybtn").addEventListener("click", 
     function(event){
         const t = document.getElementById("resultlink")
@@ -14,37 +22,9 @@ function genCards(){
 
     let clist = []
 
-    if (ctype == "1"){
-        clist = [
-            './res/birthday/1.png',
-            './res/birthday/2.png',
-            './res/birthday/3.png',
-            './res/birthday/4.png',
-            './res/birthday/5.png',
-            './res/birthday/6.png',
-            './res/birthday/7.png',
-            './res/birthday/8.png',
-            './res/birthday/9.png',
-        ]
-    }
-    else if (ctype == "6"){
-        clist = [
-            './res/thankyou/1.png',
-            './res/thankyou/2.png',
-            './res/thankyou/3.png',
-            './res/thankyou/4.png',
-            './res/thankyou/5.png',
-        ]
-    }
-    else if (ctype == "7"){
-        clist = [
-            './res/anniversary/1.png',
-            './res/anniversary/2.png',
-            './res/anniversary/3.png',
-        ]
-    }
+    clist = Object.values(cardDATA[ctype]["img"])
 
-    for(a=0; a < clist.length; ++a){
+    for(let a=0; a < clist.length; ++a){
         chosen += `
             <div class="col">
                 <div class="card h-100">
@@ -69,8 +49,8 @@ function selectCard(no){
     const enc_cname = encodeURI(window.btoa(cname))
     const enc_ctext = encodeURI(window.btoa(ctext))
 
-    // temp = window.location.origin + `/template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for local
-    temp = window.location.href + `template1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for github
+    // temp = window.location.origin + `/templates/1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for local
+    temp = window.location.href + `templates/1.html?card=${ctype}&name=${enc_cname}&text=${enc_ctext}&templ=${templ}`    // for github
     res.value = temp
     
 
@@ -87,13 +67,18 @@ function selectCard(no){
     document.getElementById("msg").innerText = `Card ${templ} is Selected. Send the link or the QR Code to the person`
 }
 
-
-
-// const bdaywishes = [
-//     'I hope your day is filled with lots of love and laughter! May all of your birthday wishes come true.',
-//     'Wishing you all the great things in life, hope this day will bring you an extra share of all that makes you happiest.',
-//     'They say you lose your memory as you grow older. I say forget about the past and live life to the fullest today. Start with cake. Happy birthday.',
-//     'On your special day, I wish you good luck. I hope this wonderful day will fill up your heart with joy and blessings.',
-//     'To someone who touches each life you enter, spreading joy to everyone you meet: may the love and happiness you share with others return to you tenfold. I wish you many more happiest of birthdays!'
-// ]
-// const random = Math.floor(Math.random() * bdaywishes.length);
+/*
+TOPICS :=====
+    Birthday
+    Dinner Party
+    Wedding
+    Christmas Party
+    Teacher Appreciation
+    Thank You
+    Anniversary
+    Congratulations
+    Get Well
+    Friendship
+    Love
+    Sorry
+*/
