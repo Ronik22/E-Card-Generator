@@ -14,7 +14,7 @@ Generate E-Cards (Birthday wish, Anniversary, Thank you cards, etc) and send the
 
 ## Add New Card Cover Images:
 
-1. Add new image into the folder of your choice inside `res` folder. You can also make a new folder.
+1. Add new image in the folder of your choice inside `res` folder. You can also make a new folder.
 2. Follow the numeric order and also name your image after a number. Then add the path to `path.js` file. In here, `cardPicPaths` is in JSON format.
 
 **Example 1:** Adding an image named `2.png` under `anniversary` folder looks like this
