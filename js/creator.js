@@ -28,7 +28,7 @@ function genCards(){
         chosen += `
             <div class="col">
                 <div class="card h-100">
-                    <img src="${clist[a]}" class="card-img-top" alt="card">
+                    <img src="${clist[a].slice(1)}" class="card-img-top" alt="card">
                     <div class="card-body">
                         <h4>Card ${a}</h4><br>
                         <a onclick="selectCard(${a})" class="btn btn-warning" >Select this</a>
